@@ -1,6 +1,6 @@
 nom
     by Xavier Shay
-    for http://ausnom.com 
+    for http://ausnom.com # Site not active yet
 
 == Description
 
@@ -26,4 +26,4 @@ Send me an email, I will help.
 
 == Install
 
-  gem install nom
+  gem install nom # Does not work yet
