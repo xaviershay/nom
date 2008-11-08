@@ -10,7 +10,7 @@ rescue LoadError
 end
 
 ensure_in_path 'lib'
-depend_on 'json'
+depend_on 'json_pure'
 
 require 'nom'
 

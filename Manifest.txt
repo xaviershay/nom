@@ -1,0 +1,11 @@
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/nom
+lib/nom.rb
+lib/nom/formatter.rb
+lib/nom/searcher.rb
+spec/nom_spec.rb
+spec/spec_helper.rb
+test/test_nom.rb

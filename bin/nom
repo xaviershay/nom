@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
-require File.expand_path(
-    File.join(File.dirname(__FILE__), %w[.. lib nom]))
+$LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib])))
+
+require 'nom'
 
 # Put your code here
-Nom.search(*ARGV)
+Nom::Searcher.new.search(*ARGV)
 # EOF
