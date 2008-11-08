@@ -2,8 +2,11 @@ module Nom
   class Searcher
     BASE = "ausnom.localhost"
 
-    def search(search, index = nil)
-      foods = request("/foods.json?q=#{URI.escape(search)}")
+    def search(*args)
+      index = Integer(args.last) rescue nil
+      args.pop if index
+
+      foods = request("/foods.json?q=#{URI.escape(args.join(' '))}")
 
       foods = [foods[index.to_i-1]] if index && foods[index.to_i-1]
 
