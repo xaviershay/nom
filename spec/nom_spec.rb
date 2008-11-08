@@ -43,12 +43,10 @@ describe Nom, 'integration specs' do
       @output.to_a.first.should =~ /#{@food}/i
     end
 
-    it 'shows the Energy measure in KJ for that product' do
-      @output.should =~ /Energy\s+\d+(\.\d+)?KJ/
-    end
-
-    it 'shows the Protein measure in G for that product' do
-      @output.should =~ /Protein\s+\d+(\.\d+)?G/
+    Nom::Config.new[:nutrients].each do |nutrient|
+      it "shows the #{nutrient} measure for that product" do
+        @output.should =~ /Energy\s+\d+(\.\d+)?/
+      end
     end
   end
 
