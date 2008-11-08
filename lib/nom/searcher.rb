@@ -22,7 +22,7 @@ module Nom
     end
 
     def request(url)
-      res = Net::HTTP.start(BASE, 80) {|http|
+      res = Net::HTTP.start(config[:base], 80) {|http|
         http.get(url)
       }
       JSON.parse(res.body)
@@ -30,6 +30,10 @@ module Nom
 
     def formatter
       Nom::Formatter.new
+    end
+
+    def config
+      @config ||= Nom::Config.new
     end
   end
 end

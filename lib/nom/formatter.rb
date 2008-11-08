@@ -1,5 +1,9 @@
 module Nom
   class Formatter
+    def print_empty
+      puts "No foods found :("
+    end
+
     def print_list(foods)
       foods.each_with_index do |food, index|
         puts "%i: %s" % [index + 1, food["name"]]

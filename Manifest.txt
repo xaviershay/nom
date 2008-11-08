@@ -3,9 +3,14 @@ Manifest.txt
 README.txt
 Rakefile
 bin/nom
+lib/.nom
 lib/nom.rb
+lib/nom/config.rb
 lib/nom/formatter.rb
 lib/nom/searcher.rb
+spec/be_numbered.rb
+spec/config_spec.rb
 spec/nom_spec.rb
+spec/searcher_spec.rb
 spec/spec_helper.rb
 test/test_nom.rb

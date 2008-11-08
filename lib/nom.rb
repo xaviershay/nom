@@ -6,5 +6,6 @@ module Nom
   VERSION = "0.0.1"
 end
 
+require 'nom/config'
 require 'nom/searcher'
 require 'nom/formatter'

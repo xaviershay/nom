@@ -1,5 +1,6 @@
-require File.expand_path(
-    File.join(File.dirname(__FILE__), %w[.. lib nom]))
+$LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib])))
+
+require 'nom'
 
 Spec::Runner.configure do |config|
   # == Mock Framework
@@ -9,7 +10,7 @@ Spec::Runner.configure do |config|
   #
   # config.mock_with :mocha
   # config.mock_with :flexmock
-  # config.mock_with :rr
+  config.mock_with :rr
 end
 
 require File.expand_path(
