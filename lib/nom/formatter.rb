@@ -13,7 +13,7 @@ module Nom
     def print_one(food)
       puts food["name"]
       config[:nutrients].each do |nutrient|
-        if n = food["all_nutrients"].detect {|x| x["description"].downcase == nutrient.downcase }
+        if n = food["nutrients"].detect {|x| x["description"].downcase == nutrient.downcase }
           puts "%-10s %s%s" % [n["description"], n["value"], n["scale"]]
         end
       end

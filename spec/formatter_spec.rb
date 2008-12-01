@@ -20,7 +20,7 @@ describe Nom::Config do
     def food(extra = {})
       {
         "name"          => "Tofu",
-        "all_nutrients" => [
+        "nutrients" => [
           nutrient(*%w(Energy 751.0 KJ)),
           nutrient(*%w(Protein 17.3 G))
         ]
@@ -40,7 +40,7 @@ describe Nom::Config do
 
       output = capture_stdout do
         formatter.print_one(food(
-          "all_nutrients" => [
+          "nutrients" => [
             nutrient(*%w(Energy 751.0 KJ)),
             nutrient(*%w(Protein 17.3 G))
           ]
