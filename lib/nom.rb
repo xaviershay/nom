@@ -3,7 +3,7 @@ require 'net/http'
 require 'json/pure'
 
 module Nom
-  VERSION = "0.0.1"
+  VERSION = "0.0.2"
 end
 
 require 'nom/config'
