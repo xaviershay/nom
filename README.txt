@@ -1,13 +1,10 @@
 nom
     by Xavier Shay
-    for http://ausnom.com # Site not active yet
+    for http://ausnom.com
 
 == Description
 
 Command line access to ausnom.com (AU and NZ nutritional data)
-Of course, ausnom.com doesn't exist yet. You'll have to find it
-at github and run it at ausnom.localhost. Yeah, good luck with that.
-Send me an email, I will help.
 
   ~ $ nom Tofu
   1: Ice Confection, Tofu-Based, Vanilla Flavour
@@ -26,4 +23,11 @@ Send me an email, I will help.
 
 == Install
 
-  gem install nom # Does not work yet
+  git clone git://github.com/xaviershay/nom.git 
+  cd nom
+  rake gem:install
+
+== TODO
+
+* Push the gem to a server somewhere so you can just install that
+* Allow calories to be displayed rather than energy
