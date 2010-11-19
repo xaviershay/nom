@@ -1,10 +1,10 @@
-nom
-    by Xavier Shay
-    for http://ausnom.com
+= nom
 
 == Description
 
-Command line access to ausnom.com (AU and NZ nutritional data)
+Command line access to ausnom.com, a webservice exposing AU and NZ nutritional data as provided by foodstandards.gov.au.
+
+== Usage
 
   ~ $ nom Tofu
   1: Ice Confection, Tofu-Based, Vanilla Flavour
@@ -21,13 +21,36 @@ Command line access to ausnom.com (AU and NZ nutritional data)
   Energy     530.0KJ
   Protein    12.0G
 
+You can customize the nutrients shown by creating ~/.nom to look like this:
+
+  base: ausnom.com
+  nutrients:
+    - Energy
+    - Protein
+
 == Install
 
-  git clone git://github.com/xaviershay/nom.git 
-  cd nom
-  rake gem:install
+  gem install nom
+
+== Compatibility
+
+Tested on 1.8.7 and 1.9.2.
+
+== Developing
+
+  git clone git://github.com/xaviershay/nom.git
+  bundle install
+  rake # Run the specs
+
+The specs include integration tests that run against the live website, so you will need internet access for them to pass. Alternatively, you can set up an ausnom server on your machine and develop against that (http://github.com/xaviershay/ausnom).
+
+Command line parsing is currently ad-hoc, I would be open to using a proper library to do this (optparse?)
+
+== Status
+
+Spec'd, I use it, need to clean up the below TODOs before 1.0 release.
 
 == TODO
 
-* Push the gem to a server somewhere so you can just install that
+* Display help text when no arguments provided
 * Allow calories to be displayed rather than energy
