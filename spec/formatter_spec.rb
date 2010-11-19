@@ -31,7 +31,7 @@ describe Nom::Config do
       output = capture_stdout do
         Nom::Formatter.new.print_one(food("name" => "Tofu"))
       end
-      output.to_a.first.should == "Tofu\n"
+      output.lines.first.should == "Tofu\n"
     end
 
     it 'prints a line for each nutrient specified in the config file' do
@@ -46,7 +46,7 @@ describe Nom::Config do
           ]
         ))
       end
-      lines = output.to_a
+      lines = output.lines.to_a
       lines[1].should == "Energy     751.0KJ\n"
       lines[2].should == "Protein    17.3G\n"
     end

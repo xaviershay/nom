@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nom (1.0)
+    nom (0.9.1)
       json_pure
 
 GEM

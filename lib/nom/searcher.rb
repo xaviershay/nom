@@ -11,9 +11,9 @@ module Nom
       foods = [foods[index.to_i-1]] if index && foods[index.to_i-1]
 
       case foods.size
-        when 0: formatter.print_empty
-        when 1: formatter.print_one(get_by_id(foods.first["food_id"]))
-        else    formatter.print_list(foods)
+        when 0 then formatter.print_empty
+        when 1 then formatter.print_one(get_by_id(foods.first["food_id"]))
+        else        formatter.print_list(foods)
       end
     end
     

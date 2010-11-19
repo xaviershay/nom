@@ -3,17 +3,17 @@ require File.join(File.dirname(__FILE__), %w[spec_helper])
 describe Nom, 'integration specs' do
   shared_examples_for "a search listing" do
     it 'shows at least one result' do
-      @output.to_a.size.should >= 1
+      @output.lines.to_a.size.should >= 1
     end
 
     it 'numbers each line' do
-      @output.each_with_index do |line, i|
+      @output.lines.each_with_index do |line, i|
         line.should be_numbered(i + 1)
       end
     end
 
     it 'shows only results that contain the word searched for' do
-      @output.each_with_index do |line, i|
+      @output.lines.each_with_index do |line, i|
         line.should =~ /#{@food}/i
       end
     end
@@ -42,7 +42,7 @@ describe Nom, 'integration specs' do
 
   shared_examples_for 'a food detail listing' do
     it 'shows one product containing the word searched for' do
-      @output.to_a.first.should =~ /#{@food}/i
+      @output.lines.first.should =~ /#{@food}/i
     end
 
     Nom::Config.new[:nutrients].each do |nutrient|
