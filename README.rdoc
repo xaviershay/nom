@@ -1,7 +1,5 @@
 = nom
 
-== Description
-
 Command line access to ausnom.com, a webservice exposing AU and NZ nutritional data as provided by foodstandards.gov.au.
 
 == Usage
