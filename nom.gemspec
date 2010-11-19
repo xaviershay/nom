@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.files    = Dir.glob("{spec,lib}/**/*.rb") + 
                Dir.glob("bin/*") +
-               %w(lib/.nom README.txt History.txt Rakefile)
+               %w(lib/.nom README.rdoc HISTORY LICENSE Rakefile)
 
   s.bindir       = 'bin'
   s.require_path = 'lib'
