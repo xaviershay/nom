@@ -1,28 +1,10 @@
-# Look in the tasks/setup.rb file for the various options that can be
-# configured in this Rakefile. The .rake files in the tasks directory
-# are where the options are used.
+desc 'Default: run specs.'
+task :default => :spec
 
-begin
-  require 'bones'
-  Bones.setup
-rescue LoadError
-  load 'tasks/setup.rb'
+# RSpec provided helper doesn't like me, for now just run it myself
+desc "Run specs"
+task :spec do
+  commands = []
+  commands << "bundle exec rspec spec/*_spec.rb"
+  exec commands.join(" && ")
 end
-
-ensure_in_path 'lib'
-depend_on 'json_pure'
-
-require 'nom'
-
-task :default => 'spec:run'
-
-PROJ.name = 'nom'
-PROJ.authors = 'Xavier Shay'
-PROJ.email = 'contact@rhnh.net'
-PROJ.url = 'http://ausnom.com'
-PROJ.version = Nom::VERSION
-#PROJ.rubyforge.name = 'nom'
-
-PROJ.spec.opts << '--color'
-
-# EOF

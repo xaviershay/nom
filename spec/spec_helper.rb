@@ -1,9 +1,9 @@
-$LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib])))
-ENV["PATH"] = [File.expand_path(File.join(File.dirname(__FILE__), %w[.. bin])), ENV["PATH"]].join(':')
+$LOAD_PATH.unshift(File.expand_path("../../lib", __FILE__))
+ENV["PATH"] = [File.expand_path("../../bin", __FILE__), ENV["PATH"]].join(':')
 
 require 'nom'
 
-Spec::Runner.configure do |config|
+RSpec.configure do |config|
   # == Mock Framework
   #
   # RSpec uses it's own mocking framework by default. If you prefer to
@@ -14,7 +14,4 @@ Spec::Runner.configure do |config|
   config.mock_with :rr
 end
 
-require File.expand_path(
-    File.join(File.dirname(__FILE__), 'be_numbered'))
-
-# EOF
+require File.expand_path('../be_numbered', __FILE__)

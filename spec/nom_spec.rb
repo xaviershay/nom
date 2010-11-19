@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), %w[spec_helper])
 
 describe Nom, 'integration specs' do
-  describe "a search listing", :shared => true do
+  shared_examples_for "a search listing" do
     it 'shows at least one result' do
       @output.to_a.size.should >= 1
     end
@@ -38,7 +38,9 @@ describe Nom, 'integration specs' do
     it_should_behave_like "a search listing"
   end
 
-  describe 'a food detail listing', :shared => true do
+
+
+  shared_examples_for 'a food detail listing' do
     it 'shows one product containing the word searched for' do
       @output.to_a.first.should =~ /#{@food}/i
     end
@@ -68,5 +70,3 @@ describe Nom, 'integration specs' do
     it_should_behave_like "a food detail listing"
   end
 end
-
-# EOF
